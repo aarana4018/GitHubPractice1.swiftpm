@@ -19,9 +19,11 @@ struct ContentView: View {
                 .background(
                     Rectangle()
                         .foregroundColor(.gray)
-                        .opacity(0.5)
+                        .opacity(0.1)
                 )
                 
+                Spacer()
+        
                 Button("Add") {
                     answer = integer1 + integer2
                 }
@@ -30,10 +32,11 @@ struct ContentView: View {
                 .background(
                     Rectangle()
                         .foregroundColor(.gray)
-                        .opacity(0.5)
+                        .opacity(0.1)
                 )
             }
             .padding()
+            .frame(width: 300, height: 100)
             
             HStack{
                 Button("Subtract") {
@@ -44,8 +47,10 @@ struct ContentView: View {
                 .background(
                     Rectangle()
                         .foregroundColor(.gray)
-                        .opacity(0.5)
+                        .opacity(0.1)
                 )
+                
+                Spacer()
                 
                 Button("Divide") {
                     answer = integer1 / integer2
@@ -56,27 +61,33 @@ struct ContentView: View {
                 .background(
                     Rectangle()
                         .foregroundColor(.gray)
-                        .opacity(0.5)
+                        .opacity(0.1)
                 )
             }
             .padding()
+            .frame(width: 300, height: 100)
             
-            TextField("Integer One", value: $integer1, format: .number)
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .opacity(0.6)
-            
-            TextField("Integer One", value: $integer1, format: .number )
-            
-            TextField("Integer Two", value: $integer2, format: .number)
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .opacity(0.6)
-            
-            Text("\(answer)")
-                .font(.system(size: 30))
-                .foregroundColor(.gray)
-            
+            HStack {
+                TextField("Integer One", value: $integer1, format: .number)
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+                
+                TextField("Integer Two", value: $integer2, format: .number)
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+                
+                Text("=")
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+                
+                Text("\(answer)")
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+            }
         }
         .padding()
         .textFieldStyle(.roundedBorder)
