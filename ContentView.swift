@@ -12,18 +12,21 @@ struct ContentView: View {
         VStack {
             
             HStack{
-                Button("Multiply") {
+                
+                Button {
                     answer = integer1 * integer2
                     
                     sign = "x"
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.1)
-                )
+                } label: {
+                    Text("Multiply")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.1)
+                        )}
                 
                 Spacer()
         
@@ -31,31 +34,36 @@ struct ContentView: View {
                     answer = integer1 + integer2
                     
                     sign = "+"
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.1)
-                )
+                } label: {
+                    Text("Addition")
+                        .padding()
+                    .font(.system(size: 30))
+                    .foregroundColor(.cyan)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.gray)
+                            .opacity(0.1)
+                    )}
             }
             .padding()
             .frame(width: 300, height: 100)
-            
+                
             HStack{
-                Button("Subtract") {
+                
+                Button {
                     answer = integer1 - integer2
                     
                     sign = "-"
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.1)
-                )
+                } label: {
+                    Text("Subtraction")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.1)
+                        )}
                 
                 Spacer()
                 
@@ -64,19 +72,25 @@ struct ContentView: View {
                     
                     sign = "/"
 
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.1)
-                )
+                } label: {
+                    Text("Divide")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.5)
+                            )}
+                          
             }
             .padding()
             .frame(width: 300, height: 100)
+                    
+                   
             
             HStack {
+                
                 TextField("Integer One", value: $integer1, format: .number)
                     .font(.system(size: 30))
                     .foregroundColor(.gray)
@@ -102,6 +116,7 @@ struct ContentView: View {
                     .foregroundColor(.gray)
                     .opacity(0.6)
             }
+            .padding()
         }
         .padding()
         .textFieldStyle(.roundedBorder)
