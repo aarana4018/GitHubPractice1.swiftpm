@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var answer: String
+    @State var answer: Int
     
     var body: some View {
         
