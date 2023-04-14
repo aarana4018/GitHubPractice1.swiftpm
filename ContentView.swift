@@ -14,6 +14,18 @@ struct ContentView: View {
                 answer = integer1 * integer2
             }
             
+            Button("Add") {
+                
+            }
+            
+            Button("Subtract") {
+                
+            }
+            
+            Button("Divide") {
+                
+            }
+            
             TextField("Integer One", value: $integer1, format: .number )
             
             TextField("Integer Two", value: $integer2, format: .number)
