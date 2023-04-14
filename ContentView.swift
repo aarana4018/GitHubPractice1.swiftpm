@@ -5,6 +5,7 @@ struct ContentView: View {
     @State var integer1: Int = 0
     @State var integer2: Int = 0
     @State var answer: Int = 0
+    @State var sign: String = "?"
     
     var body: some View {
         
@@ -13,6 +14,8 @@ struct ContentView: View {
             HStack{
                 Button("Multiply") {
                     answer = integer1 * integer2
+                    
+                    sign = "x"
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -26,6 +29,8 @@ struct ContentView: View {
         
                 Button("Add") {
                     answer = integer1 + integer2
+                    
+                    sign = "+"
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -41,6 +46,8 @@ struct ContentView: View {
             HStack{
                 Button("Subtract") {
                     answer = integer1 - integer2
+                    
+                    sign = "-"
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -54,6 +61,8 @@ struct ContentView: View {
                 
                 Button("Divide") {
                     answer = integer1 / integer2
+                    
+                    sign = "/"
 
                 }
                 .font(.system(size: 30))
@@ -69,6 +78,11 @@ struct ContentView: View {
             
             HStack {
                 TextField("Integer One", value: $integer1, format: .number)
+                    .font(.system(size: 30))
+                    .foregroundColor(.gray)
+                    .opacity(0.6)
+                
+                Text(sign)
                     .font(.system(size: 30))
                     .foregroundColor(.gray)
                     .opacity(0.6)
