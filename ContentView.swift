@@ -23,7 +23,7 @@ struct ContentView: View {
                 )
                 
                 Button("Add") {
-                    
+                    answer = integer1 + integer2
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -37,7 +37,7 @@ struct ContentView: View {
             
             HStack{
                 Button("Subtract") {
-                    
+                    answer = integer1 - integer2
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -48,7 +48,8 @@ struct ContentView: View {
                 )
                 
                 Button("Divide") {
-                    
+                    answer = integer1 / integer2
+
                 }
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
@@ -65,6 +66,7 @@ struct ContentView: View {
                 .foregroundColor(.cyan)
                 .opacity(0.6)
             
+            TextField("Integer One", value: $integer1, format: .number )
             
             TextField("Integer Two", value: $integer2, format: .number)
                 .font(.system(size: 30))
