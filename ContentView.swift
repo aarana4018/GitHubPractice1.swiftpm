@@ -11,53 +11,68 @@ struct ContentView: View {
         VStack {
             
             HStack{
-                Button("Multiply") {
-                    answer = integer1 * integer2
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                )
                 
-                Button("Add") {
-                    answer = integer1 + integer2
+                Button {
+                    answer = integer1 * integer2
+                } label: {
+                    Text("Multiply")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.5)
+                        )
                 }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                )
+
+                Button {
+                    answer = integer1 + integer2
+                } label: {
+                    Text("Addition")
+                        .padding()
+                    .font(.system(size: 30))
+                    .foregroundColor(.cyan)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                    )
+                }
+
+            
             }
             .padding()
             
             HStack{
-                Button("Subtract") {
-                    answer = integer1 - integer2
-                }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                )
                 
-                Button("Divide") {
-                    answer = integer1 / integer2
-
+                Button {
+                    answer = integer1 - integer2
+                } label: {
+                    Text("Subtraction")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.5)
+                        )
                 }
-                .font(.system(size: 30))
-                .foregroundColor(.cyan)
-                .background(
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                )
+                
+                Button {
+                    answer = integer1 / integer2
+                } label: {
+                    Text("Divide")
+                        .padding()
+                        .font(.system(size: 30))
+                        .foregroundColor(.cyan)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.gray)
+                                .opacity(0.5)
+                            )}
+                          
             }
             .padding()
             
@@ -65,8 +80,7 @@ struct ContentView: View {
                 .font(.system(size: 30))
                 .foregroundColor(.cyan)
                 .opacity(0.6)
-            
-            TextField("Integer One", value: $integer1, format: .number )
+        
             
             TextField("Integer Two", value: $integer2, format: .number)
                 .font(.system(size: 30))
