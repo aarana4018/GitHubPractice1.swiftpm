@@ -11,8 +11,9 @@ struct ContentView: View {
         VStack {
            
             Button("Multiply") {
-                
+                answer = integer1 * integer2
             }
+            
             TextField("Integer One", value: $integer1, format: .number )
             
             TextField("Integer Two", value: $integer2, format: .number)
