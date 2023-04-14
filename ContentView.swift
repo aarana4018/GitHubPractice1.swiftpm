@@ -15,15 +15,15 @@ struct ContentView: View {
             }
             
             Button("Add") {
-                
+                answer = integer1 + integer2
             }
             
             Button("Subtract") {
-                
+                answer = integer1 - integer2
             }
             
             Button("Divide") {
-                
+               answer = integer1 / integer2
             }
             
             TextField("Integer One", value: $integer1, format: .number )
