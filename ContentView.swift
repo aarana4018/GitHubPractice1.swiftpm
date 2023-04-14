@@ -9,28 +9,74 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-           
-            Button("Multiply") {
-                answer = integer1 * integer2
-            }
             
-            Button("Add") {
+            HStack{
+                Button("Multiply") {
+                    answer = integer1 * integer2
+                }
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .background(
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                )
                 
+                Button("Add") {
+                    
+                }
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .background(
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                )
             }
+            .padding()
             
-            Button("Subtract") {
+            HStack{
+                Button("Subtract") {
+                    
+                }
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .background(
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                )
                 
+                Button("Divide") {
+                    
+                }
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .background(
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                )
             }
+            .padding()
             
-            Button("Divide") {
-                
-            }
+            TextField("Integer One", value: $integer1, format: .number)
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .opacity(0.6)
             
-            TextField("Integer One", value: $integer1, format: .number )
             
             TextField("Integer Two", value: $integer2, format: .number)
+                .font(.system(size: 30))
+                .foregroundColor(.cyan)
+                .opacity(0.6)
             
             Text("\(answer)")
+                .font(.system(size: 30))
+                .foregroundColor(.gray)
+            
         }
+        .padding()
+        .textFieldStyle(.roundedBorder)
     }
 }
